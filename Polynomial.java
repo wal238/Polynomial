@@ -11,6 +11,7 @@ public class Polynomial implements Comparable <Polynomial>
      
     }
     
+    //returns the max degree of the polynomial
     public int getDegree()
     {
         for (int i = coefficients.length -1; i>=0; i--)
@@ -29,6 +30,7 @@ public class Polynomial implements Comparable <Polynomial>
         
         } 
     
+    //override's the toString method to return a the polynomial in a readable string format i.e. 4x^2 + 4x. 
     @Override public String toString()
     {
        String res = "";
@@ -53,7 +55,7 @@ public class Polynomial implements Comparable <Polynomial>
        
     }
     
-    
+    //returns the coefficient 
     public int getCoefficient(int k)
     {
         if (k > coefficients.length-1)
@@ -140,7 +142,7 @@ public class Polynomial implements Comparable <Polynomial>
         return 0;
         
     }
-    
+    //adds two instances of polynomial
     public Polynomial add(Polynomial other)
     {        
         int max = Math.max(this.getDegree(), other.getDegree());
@@ -161,6 +163,7 @@ public class Polynomial implements Comparable <Polynomial>
         return result;
     }
     
+    //multiplies two instances of polynomial
     public Polynomial multiply(Polynomial other)
     {
         int max = this.getDegree() + other.getDegree();
